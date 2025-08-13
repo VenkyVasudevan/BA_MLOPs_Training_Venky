@@ -1,15 +1,14 @@
-```
 name: Churn ML Project CI/CD (Unittest)
 
 on:
   push:
     branches: [main]
     paths:
-      - '02_Testing_CICD_Churn_ML_Project/**'
+      - '02 Building & Integrating ML Pipelines/churn_ml_project_unittest/**'
   pull_request:
     branches: [main]
     paths:
-      - '02_Testing_CICD_Churn_ML_Project/**'
+      - '02 Building & Integrating ML Pipelines/churn_ml_project_unittest/**'
 
 jobs:
   test:
@@ -19,7 +18,7 @@ jobs:
     defaults:
       run:
         # Set the working directory to the project root within the repository
-        working-directory: "02_Testing_CICD_Churn_ML_Project"
+        working-directory: "02 Building & Integrating ML Pipelines/churn_ml_project_unittest"
 
     steps:
     - name: Checkout Repository
@@ -57,5 +56,3 @@ jobs:
         # Run E2E tests
         # Assumes E2E tests are in 'tests/e2e/' and are named e.g., 'e2e_test.py'
         python -m unittest discover tests/e2e -p "test_*.py"
-
-```
